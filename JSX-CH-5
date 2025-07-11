@@ -1,0 +1,41 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+
+  return (
+    <div>
+      {/* 
+     ===> Controlled component
+     1) What is controlled component
+     2) How to identify this is a controlled component 
+     3) Error if we dont use Controoled value properly.
+     4) Make from get input feild values.
+     5) Display input feild values.
+     6) interview Question.
+    */}
+
+      <h1>Controller Components</h1>
+      <from action=""   mathod = 'get'>
+      <input type="text" value = {name} onChange={(event)=>setName(event.target.value)} placeholder='Enter name'/>
+      <br />
+      <input type="password" value = {password} onChange={(event)=>setPassword(event.target.value)} placeholder='Enter Password'/>
+      <br />
+      <input type="text" value = {email} onChange={(event)=>setEmail(event.target.value)} placeholder='Enter Email'/>
+      <br />
+      <button>Submit</button>
+      <button onClick={()=> {setEmail(''); setName(''); setPassword(' ')}}>Clear</button>
+      <h3>{name}</h3>
+      <h3>{password}</h3>
+      <h3>{email}</h3>
+       </from>
+   </div>
+  )
+}
+
+export default App
