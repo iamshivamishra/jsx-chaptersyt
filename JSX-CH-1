@@ -1,0 +1,72 @@
+import {useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import User from './User.jsx'
+
+
+// ===> Toggle or Hide and Show in React 
+// 1) Define state
+// 2) Update stste on buttton click
+// 3) Add condition for toggle
+// 4) Hide and show Component
+// 5) Task for Me
+// 6) Interview Question
+
+
+function App() {
+  const [count,setCount] = useState(0)
+  const [display,setDisplay] = useState(true)
+
+  return (
+    <>
+    <h1>Toggle in react js</h1>
+    <button onClick={( )=> setDisplay(!display)}>Toggle</button>
+    
+     {
+      //  display? <h1>This is correct statment</h1>:null
+     }
+
+     {
+        display? <User />:null
+     }
+
+     {/* 
+      ====> Multiple Condition in react
+      1) Define state and button
+      2) Change state value on button click
+      3) Apply Condition with state
+      4) interview Question
+     */}
+      
+      <h1>{count}</h1>
+      <button onClick={()=> setCount(count + 1)}>plz click me</button>
+
+     {
+      count==0?<h1>Condition 0</h1>
+      :count==1?<h1>Condition 1</h1>
+      :count==2?<h1>Condition 2</h1>
+      :count==3?<h1>Condition 3</h1>
+      :count==4?<h1>Condition 4</h1>
+      :count==5?<h1>Condition 5</h1>
+      :<h1>other condition</h1>
+     }       
+    </>
+  )
+}
+
+
+
+export default App
+
+
+
+
+function User() {
+    return <div>
+        <h1>Shivam Mishra</h1>
+    </div>
+}
+
+
+export default User;
