@@ -1,0 +1,74 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Chexboxs  from './skills'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+     <div>
+      {/* 
+       ====> Handle Checkbox
+       1) Make checkbox
+       2) Define state for checkbox
+       3) get checkbox value in state
+       4) Remove checkbox value in state
+       5) Interview question
+      */}
+
+
+
+      <h1>Handle checkbox in react js</h1>
+      <Chexboxs />
+     </div>
+  )
+}
+
+export default App
+
+
+
+
+
+=========================================================================================================================================================================================
+// In skills.jsx
+
+
+import { useState } from 'react'
+function Chexboxs() {
+    const [skills, setSkills] = useState([])
+    const handleSkills = (event) => {
+        console.log(event.target.value, event.target.checked)
+        if(event.target.checked){
+            setSkills([...skills, event.target.value])
+        }else{
+            setSkills([skills.filter((item)=> item!==event.target.value)])
+        }
+    }
+    return (
+        <div>
+            <h3>Select your skill</h3>
+
+            <input type="checkbox" onChange={handleSkills} id="php" value='php' />
+            <label htmlFor="php">PHP</label>
+            <br />
+            <br />
+            <input type="checkbox" onChange={handleSkills} id="java" value='Java' />
+            <label htmlFor="java">Java</label>
+            <br />
+            <br />
+            <input type="checkbox" onChange={handleSkills} id="react" value='react' />
+            <label htmlFor="react">React.js</label>
+            <br />
+            <br />
+            <input type="checkbox" onChange={handleSkills} id="C++" value='C++' />
+            <label htmlFor="C++">C++</label>
+            <h3>{skills.toString()}</h3>
+        </div>
+    )
+}
+
+
+export default Chexboxs;
