@@ -1,0 +1,47 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [gender, setGender] = useState('');
+  const [city, setCity] = useState('Delhi');
+
+  return (
+  <div>
+    {/* 
+     ====> Handle radio and dropdown
+     1) Make radio buttons
+     2) Get radio value in state
+     3) default selection of radio button
+     4) make dropdown
+     5) get dropdown value in state
+     6) default selection in dropdown
+    */}
+
+
+     <h1>Handle radio and dropdown</h1>
+     <h3>Select Gender</h3>
+     <input type="radio" checked = {gender == 'male'} value={"male"} onChange={(event)=>setGender(event.target.value)} name='gender' id='male'/>
+     <label htmlFor="male">Male</label>
+     <input type="radio" checked = {gender == 'female'} value={"female"} onChange={(event)=>setGender(event.target.value)}   name='gender' id='female'/>
+     <label htmlFor="female">Female</label>
+     <h2>select gender:  {gender}</h2>
+     <br />
+     <br />
+     <br />
+
+     <h4>Select City</h4>
+     <select name="" id="" defaultValue={"Delhi"} onChange={(event)=>setCity(event.target.value)}>
+      <option value="Bombay">Bombay</option>
+      <option value="Gurgao">Gurgao</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Banglor">Banglor</option>
+      <option value="Pune">Pune</option>
+     </select>
+     <h2>Selecte City: {city}</h2>
+  </div>
+  )
+}
+
+export default App
