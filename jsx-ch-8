@@ -1,0 +1,136 @@
+// App.jsx
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import College from './College.jsx'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  const collegeData = [
+    {
+      name: 'IET DELHI',
+      city: 'Delhi',
+      website: "www.ietdelhi.com",
+      student_name:[
+        {
+          name:'shivam',
+          age:'19',
+          email:'shivam@gmail.xom'
+        },{
+          name:'sahil',
+          age:'18',
+          email:'sahil@gmail.xom'
+        },{
+          name:'prakash',
+          age:'19',
+          email:'prakash@gmail.xom'
+        },{
+          name:'rajan',
+          age:'29',
+          email:'rajan@gmail.xom'
+        }
+      ]
+    },{
+      name: 'IIT Kanpur',
+      city: 'Kanpur',
+      website: "www.iitkanpur.com",
+      student_name:[
+        {
+          name:'shivam',
+          age:'19',
+          email:'shivam@gmail.xom'
+        },{
+          name:'sahil',
+          age:'18',
+          email:'sahil@gmail.xom'
+        },{
+          name:'prakash',
+          age:'19',
+          email:'prakash@gmail.xom'
+        },{
+          name:'rajan',
+          age:'29',
+          email:'rajan@gmail.xom'
+        }
+      ]
+    },{
+      name: 'NIT BOMBAY',
+      city: 'Bombay',
+      website: "www.iitbombay.com",
+      student_name:[
+        {
+          name:'shivam',
+          age:'19',
+          email:'shivam@gmail.xom'
+        },{
+          name:'sahil',
+          age:'18',
+          email:'sahil@gmail.xom'
+        },{
+          name:'prakash',
+          age:'19',
+          email:'prakash@gmail.xom'
+        },{
+          name:'rajan',
+          age:'29',
+          email:'rajan@gmail.xom'
+        }
+      ]
+    }
+  ]
+  return (
+    <div style={{backgroundColor:" #f8ed5c1",
+      padding:"20px",
+      borderBottom:"2px solid #000",
+      margin:'20px',
+      borderRadius:'10px'
+    }}>
+      {/* <h1>Neasted loopign with component</h1> */}
+      {
+        collegeData.map((college,index)=>(
+           <div key={index}>
+            <h1>Name: {college.name}</h1>
+            <ul>
+                <li>
+                    <h3>City: {college.city}</h3>
+                </li>
+                <li>
+                    <h3>Websites: {college.website}</h3>
+                </li>
+            </ul>
+        </div>
+        ))
+      }
+    </div>
+  )
+}
+
+export default App
+
+
+
+
+
+
+// College.jsx
+
+
+const College = ({college}) => {
+    return (
+        <div key={index}>
+            <h1>Name: {college.name}</h1>
+            <ul>
+                <li>
+                    <h3>City: {college.city}</h3>
+                </li>
+                <li>
+                    <h3>Websites: {college.website}</h3>
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+export default  College
