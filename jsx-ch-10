@@ -1,0 +1,56 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Counter from './Counter'
+
+function App() {
+  const [count, setCount] = useState(0)
+  const [data, setData] = useState(0)
+
+  return (
+    <div>
+     <h1>Handle props side effect with useEffect in components</h1>
+     <Counter count= {count} data = {data}/>
+     <button onClick={()=>setCount(count + 1)}>Counter</button>
+     <button onClick={()=>setData(data + 1)}>Data</button>
+    </div>
+  )
+}
+
+export default App
+
+
+// Counter.jsx
+
+import { useEffect } from "react"
+
+const Counter = ({count,data}) => {
+    const handleCounter = () => {
+        console.log('handleCounter Called') 
+    }
+   
+     
+    const handleData=()=> {
+        console.log('handleData called')
+    }
+
+
+    useEffect(()=> {
+        handleCounter()
+    },[])
+
+    useEffect(()=> {
+        handleData()
+    },[data])
+
+    
+
+    return (
+        <div>
+            <h1>Counter Value {count}</h1>
+            <h1>Data Value {data}</h1>
+        </div>
+    )
+} 
+export default Counter;
