@@ -1,0 +1,23 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import {Button} from 'react-bootstrap'
+import {Alert} from 'react-bootstrap'
+
+function App() {
+  const [count, setCount] = useState(0)
+    return (
+      <div>
+      <Button onClick={()=>alert('This is react-bootstrap')}>Ok</Button>
+      <Alert>Hellow</Alert>
+      </div>
+    )
+}
+
+export default App
+
+
+
+// npm install react-bootstrap bootstrap
+// https://react-bootstrap.netlify.app/docs/getting-started/introduction
