@@ -1,0 +1,37 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { useRef } from 'react'
+// import {input} from 'react-bootstrap'
+
+function App() {
+  const inpuRef = useRef(null)
+  const inputHandler = () => {
+     console.log(inpuRef);
+     inpuRef.current.focus()
+     inpuRef.current.style.color= 'red';
+     inpuRef.current.placeholder='enter password'
+     inpuRef.current.value='123'
+    }
+    const [count, setCount] = useState(0)
+    const toggleHandler = () => {
+    if(inpuRef.current.style.display!='none'){
+      inpuRef.current.style.display= 'none';
+    }else{
+      inpuRef.current.style.display= 'inline';
+    }
+  }
+  return (
+    <div>
+      <button onClick={toggleHandler}>Toggle</button>
+
+
+      <h1>useRef</h1>
+      <input type="text" ref={inpuRef} placeholder='Enter user name'/>
+      <button onClick={inputHandler}>Focus on input feild</button>
+    </div>
+  )
+}
+
+export default App
