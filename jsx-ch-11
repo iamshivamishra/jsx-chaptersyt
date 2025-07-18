@@ -1,0 +1,144 @@
+import { useState } from 'react'
+import './App.css'
+
+function App() {
+  const [cardStyle, setCardStyle] = useState(
+    {
+      border: '1px solid #cccccc3b',
+      width: '200px',
+      boxShadow: '1px 2px 3px 0px #cccccc57',
+      margin: '10px'
+    }
+  )
+
+     const [textColor,setTextColor] = useState('')
+     const [grid,setGrid] = useState(true)
+
+  const updateTheme = (bgColor, textColor) => {
+    setCardStyle({...cardStyle,backgroundColor: bgColor})   
+  }
+  return (
+    <div>
+      <h1 style={{ color: 'red' }}>Daynamic and conditional inline style</h1>
+      <button onClick={() => updateTheme('gray', 'green')}>Gray theme</button>
+      <button onClick={() => updateTheme('white', 'gray')}>Default theme</button>
+
+      <button onClick={()=>setGrid(!grid)}>Toggle Grid</button>
+
+      <div style={{ display: grid?'flex':'block', flexWrap: 'wrap', position:'relative', left:'55px' }}>
+        <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+
+        <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+
+        <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+         <div style={cardStyle}>
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="" style={{ width: '200px' }} />
+          <div style={{ padding: '5px', color:textColor }}>
+            <h4>Shivam Mishra</h4>
+            <p>Software Devloper</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default App
