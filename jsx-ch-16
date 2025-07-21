@@ -1,0 +1,48 @@
+import { useState, useRef } from 'react'; // ✅ Added useRef
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+import UserInput from './UserInput.jsx'; // ✅ Importing UserInput component
+function App() {
+  const [count, setCount] = useState(0);
+  const inputRef = useRef(null);
+
+  const updateInput = () => {
+    console.log('Hello world');
+    inputRef.current.value = 1000;
+    inputRef.current.focus();
+    inputRef.current.style.color='green';
+  };
+
+  return (
+    <div>
+      <h1>Forward Ref</h1>
+      <UserInput  ref={inputRef}/>
+      <button onClick={updateInput}>Update Input Field</button>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+// import React, { forwardRef } from 'react';
+
+// const UserInput = (props,ref) => {
+//     return (
+//         <div>
+//             <input type="text" ref={ref}/>
+//         </div>
+//     )
+//  }
+//  export default forwardRef(UserInput);
+
+const UserInput = (props) => {
+return(
+    <input type="text" ref={props.ref}/>
+)
+}
+export default UserInput;
