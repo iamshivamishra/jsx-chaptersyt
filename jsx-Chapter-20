@@ -1,0 +1,55 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import AddUser from './AddUser'
+import DisplayUser from './DisplayUser'
+
+function App() {
+  const [count, setCount] = useState(0)
+  const [user, setUser] = useState('');
+  return (
+    <div>
+      <AddUser setUser= {setUser}/>   
+      <DisplayUser />
+    </div>
+  )
+}
+
+export default App
+
+
+================================
+
+
+  function DisplayUser(){
+    return (
+        <div>
+            <h1>this is also show in back ground</h1>
+        </div>
+    )
+}
+
+export default DisplayUser;
+import React from 'react';
+
+
+
+
+=================================
+
+
+
+import React, { useState } from 'react';
+
+function AddUser(){
+return (
+    <div>
+        <h1>This is show </h1>
+        <input type="text" onChange={(event)=> setUser(event.target.value)} placeholder="Enter user name"/>
+        <hr />
+    </div>
+) 
+}
+
+export default AddUser;
