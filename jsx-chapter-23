@@ -1,0 +1,56 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  // const [count, setCount] = useState(0)
+  const [name, setName] = useState('anil')
+  const [data, setData] = useState([
+    'anil', 'sam', 'shivam', 'sachin', 'priyanka'
+  ])
+
+  const [dataDetails, setDataDetails] = useState([
+    { name: 'anil', age: 25, city: 'delhi'},
+    { name: 'sam', age: 28, city: 'Bombay'},
+    { name: 'Shivam', age: 19, city: 'Pune'}
+  ])
+
+  const handleData = (name) => {
+    // console.log(name);
+    data[data.length - 1] = name;
+    console.log(data);
+    setData([...data]);
+  }
+
+   const handleAge = (age) => {
+    // console.log(name);
+    dataDetails[dataDetails.length - 1].age = age;
+    // console.log(age);
+    setDataDetails([...dataDetails]);
+  }
+  return (
+    <div>
+      <h1>Updating Array in State</h1>
+      {/* <h2>{name}</h2>
+       <button onClick={()=>setName('shivam ')}>Update Name</button> */}
+      <input type="text" placeholder='enter last user name' onChange={(e) => handleData(e.target.value)} />
+      {
+        data.map((item, index) => (
+          <h1 key={index}>{item}</h1>
+        ))
+      }
+
+      <hr />
+
+       <input type="text" placeholder='enter last user age' onChange={(e) => handleAge(e.target.value)} />
+      {
+        dataDetails.map((item,index)=>(
+          <h2 key={index}>Name: {item.name} Age:{item.age} City:{item.city}</h2>
+        ))
+      }
+    </div>
+  )
+}
+
+export default App
