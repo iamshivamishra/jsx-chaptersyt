@@ -1,0 +1,57 @@
+import { useActionState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const handleSubmit = async (previousState, formData) => {
+    const name = formData.get('name');
+    const password = formData.get('password');
+    console.log('Submitted Name:', name);
+    console.log('Submitted Password:', password);
+
+    // You can return a value to update local state if needed
+    return { name, password };
+  };
+
+  const handleSumit = async (previousData,form,Data) => {
+    let  name = formData.get('name')
+    let  password = formData.get('password')
+    await new Promise(res=>setTimeout(res, 7000));
+    // console.log('Form submitted',name,password);
+    if(name && password) {
+      return {message:'Form submitted successfully'};
+    }else{
+      throw new Error('Form submission failed: Name and Password are required');
+    }
+  }
+  const [data, action, isPending] = useActionState(handleSubmit, {});
+  console.log('Action State:', data)
+ 
+  return (
+    <div>
+      <h1>useActionState Hook in React JS</h1>
+      <form action={action}>
+        <input type="text" placeholder="Enter user name" name="name" />
+        <br />
+        <br />
+        <input type="password" placeholder="Enter password" name="password" />
+        <br />
+        <br />
+        <button disabled={isPending}>
+          {isPending ? 'Submitting...' : 'Submit Data'}
+        </button>
+      </form>
+
+      {data.name && (
+        <div>
+          <h3>Submitted Data:</h3>
+          <p>Name: {data.name}</p>
+          <p>Password: {data.password}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default App;
