@@ -1,0 +1,64 @@
+import { useId, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+  const name = useId()
+  const password = useId()
+  const skills = useId()
+  const terms = useId()
+  const condition = useId()
+
+  return (
+    <div>
+      {/* <h1>{name}</h1>
+      <h1>{password}</h1>
+      <h1>{terms}</h1>
+      <h1>{condition}</h1>
+      <h1>{skills}</h1> */}
+        <UserForm />
+        <hr />
+        <hr />
+        <hr />
+        <UserForm />
+    </div>
+  )
+}
+
+function UserForm() {
+   const [count, setCount] = useState(0)
+  const name = useId()
+  const password = useId()
+  const skills = useId()
+  const terms = useId()
+  const condition = useId()
+  return (
+    <div>
+      {/* <h1>{name}</h1>
+      <h1>{password}</h1>
+      <h1>{terms}</h1>
+      <h1>{condition}</h1>
+      <h1>{skills}</h1> */}
+      <form action="">
+        <label htmlFor={name}>Enter user name</label>
+        <input id={name} type="text" placeholder='Enter name'/>
+        <br />
+         <br />
+        <label htmlFor={password}>Please Enter a Password</label>
+        <input id={password} type="text" placeholder='Enter your Password'/>
+        <br />
+         <br />
+        <label htmlFor={skills}>Let me know your skills</label>
+        <input id={skills} type="text" placeholder='Enter your skills'/>
+        <br />
+         <br />
+        <label htmlFor={terms}>Terms and condition</label>
+        <input id={terms} type="checkbox" placeholder='Enter your skills'/>
+      </form>
+    </div>
+  )
+}
+
+export default App
