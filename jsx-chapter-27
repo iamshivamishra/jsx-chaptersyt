@@ -1,0 +1,128 @@
+App.jsx
+
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import College from './College'
+import { SubjectContext } from './ContextData'
+
+function App() {
+  const [count, setCount] = useState(0)
+  const [subject, setSubject] = useState('English');
+
+  return (
+    <div style={{ backgroundColor: "lightblue", padding: "20px", borderRadius: "15px", color: "darkblue", fontFamily: "Arial, sans-serif", fontSize: "18px", textAlign: "center", boxShadow: "0 8px 18px rgba(0,4,0,0.9)", margin: "20px auto", maxWidth: "600px", transition: "background-color 0.3s ease" }}>
+      <SubjectContext.Provider value={subject}>
+        <select name="" id="" onChange={(e)=>setSubject(e.target.value)} style={{ padding: "10px", borderRadius: "5px", border: "1px solid #ccc", marginBottom: "20px" }}>
+          <option value="">Select Subject</option>
+          <option value="Maths">Maths</option>
+          <option value="English">English</option>
+          <option value="Physics">Physics</option>
+        </select>
+         <h1>Context API</h1>
+         <button onClick={()=>setSubject('')}>Clar Subject</button>
+         <College/>
+      </SubjectContext.Provider>
+    </div>
+  )
+}
+
+export default App
+
+
+===============================================================================================================================================================================
+
+
+
+College.jsx
+import ClassComponent from "./ClassComponent";
+
+export default function College() {
+    return(
+        <div style={{ padding: "20px", backgroundColor: "white", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)", margin: "20px auto", maxWidth: "600px", textAlign: "center" }}>
+            <h1>College Component</h1>
+            <ClassComponent/>
+        </div>
+    )
+}
+
+
+
+===============================================================================================================================================================================
+
+ClassComponent.jsx
+
+import Student from "./Student";
+
+export default function ClassComponent() {
+    return (
+        <div style={{ padding: "20px", backgroundColor: "orange", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)", margin: "20px auto", maxWidth: "600px", textAlign: "center" }}>
+            <h1>Class Component</h1>
+            <Student />
+        </div>
+    );
+}
+
+
+
+
+===============================================================================================================================================================================
+
+Subject.jsx
+
+import React, { useContext } from 'react';
+import Student from './Student';
+import { SubjectContext } from './ContextData';
+
+function Subject() {
+    const subject = useContext(SubjectContext);
+
+    return (
+        <div style={{
+            padding: "20px",
+            backgroundColor: "purple",
+            borderRadius: "10px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+            margin: "20px auto",
+            maxWidth: "400px",
+            textAlign: "center"
+        }}>
+            <h1>Subject Component</h1>
+            <p>Subject from Context: <strong>{subject}</strong></p>
+        </div>
+    );
+}
+
+export default Subject;
+
+
+
+
+===============================================================================================================================================================================
+
+
+Student.jsx
+
+import Subject from "./Subject";
+
+export default function Student() {
+    return (
+        <div style={{ padding: "20px", backgroundColor: "lightgreen", borderRadius: "10px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)", margin: "20px auto", maxWidth: "600px", textAlign: "center" }}>
+            <h1>Student Component</h1>
+            <Subject />
+        </div>
+    );
+}
+
+
+
+
+===============================================================================================================================================================================
+
+
+ContextData.jsx
+
+import { createContext } from "react";
+
+export const SubjectContext = createContext("Maths");
