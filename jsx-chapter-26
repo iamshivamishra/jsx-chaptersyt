@@ -1,0 +1,28 @@
+import { Fragment, useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  return (
+   <Fragment>
+    <Data />
+    <Data />
+    <Data />
+    <Data />
+    <Data />
+   </Fragment>
+  )
+}
+
+export default App;
+
+
+function Data() {
+  return (
+    <Fragment> 
+     <h1>Fragment in React JS</h1>
+     <h1>Fragment in React JS</h1>
+    </Fragment>
+  )
+}
